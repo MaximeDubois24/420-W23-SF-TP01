@@ -5,6 +5,7 @@
  
  Date  31-07-2021
 */
+
 DROP DATABASE IF EXISTS PosteClientDFC;
 CREATE DATABASE IF NOT EXISTS PosteClientDFC;
 
@@ -12,6 +13,7 @@ USE PosteClientDFC;
 -- -----------------------------------------------------
 -- Étape 1 : Création des tables                      --
 -- -----------------------------------------------------
+
 CREATE TABLE poste (
     id_poste INT NOT NULL PRIMARY KEY,
     desc_poste VARCHAR(45),
