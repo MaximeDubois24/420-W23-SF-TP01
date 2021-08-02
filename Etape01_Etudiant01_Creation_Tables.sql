@@ -13,6 +13,15 @@ USE PosteClientDFC;
 -- -----------------------------------------------------
 -- Étape 1 : Création des tables                      --
 -- -----------------------------------------------------
+CREATE TABLE local (
+    id_local INT NOT NULL PRIMARY KEY,
+    nom_local VARCHAR(45) NOT NULL
+    )ENGINE = InnoDB;
+
+CREATE TABLE fabricant (
+    id_fabricant INT NOT NULL PRIMARY KEY,
+    nom_fabricant VARCHAR(45) NOT NULL
+)ENGINE = InnoDB;
 
 CREATE TABLE poste (
     id_poste INT NOT NULL PRIMARY KEY,
@@ -21,30 +30,16 @@ CREATE TABLE poste (
     nb_ram_mo VARCHAR(45),
     tail_disque_giga INT,
     id_fabricant INT,
-    id_local INT
+    id_local INT,
+	CONSTRAINT id_fabricant FOREIGN KEY(id_fabricant) REFERENCES fabricant(id_fabricant),
+    CONSTRAINT id_local FOREIGN KEY (id_local) REFERENCES local(id_local)
     )ENGINE = InnoDB;
-DESCRIBE poste;
-CREATE TABLE local (
-    id_local INT NOT NULL PRIMARY KEY,
-    nom_local VARCHAR(45) NOT NULL
-    )ENGINE = InnoDB;
-DESCRIBE local;
+
 CREATE TABLE peripherique (
     id_peripherique INT NOT NULL PRIMARY KEY,
     nom_peripherique VARCHAR(45) NOT NULL,
     id_poste INT,
-    id_fabricant INT
+    id_fabricant INT,
+    CONSTRAINT id_poste FOREIGN KEY (id_poste) REFERENCES poste(id_poste)
+    /*CONSTRAINT id_fabricant FOREIGN KEY (id_fabricant) REFERENCES fabricant(id_fabricant)*/
     )ENGINE = InnoDB;
-DESCRIBE peripherique;
-CREATE TABLE fabricant (
-    id_fabricant INT NOT NULL PRIMARY KEY,
-    nom_fabricant VARCHAR(45) NOT NULL
-    )ENGINE = InnoDB;
-DESCRIBE fabricant;
-
-ALTER TABLE poste
-ADD CONSTRAINT id_fabricant FOREIGN KEY (id_fabricant) REFERENCES fabricant(id_fabricant),
-ADD CONSTRAINT id_local FOREIGN KEY (id_local) REFERENCES local(id_local);
-
-ALTER TABLE peripherique
-ADD CONSTRAINT id_poste FOREIGN KEY (id_poste) REFERENCES poste(id_poste);
