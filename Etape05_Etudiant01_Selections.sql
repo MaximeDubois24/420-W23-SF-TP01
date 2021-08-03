@@ -1,7 +1,7 @@
 /* 
  Travail pratique 1
- Maxime Dubois
- --> Mohamed Reda Bouabdallah
+ -->  Maxime Dubois
+Mohamed Reda Bouabdallah
  
  Date  02-08-2021
 */
