@@ -1,7 +1,7 @@
 /* 
  Travail pratique 1
- Nom de la première personne
- --> Nom de la deuxième personne
+ Maxime Dubois
+ --> Mohamed Reda Bouabdallah
  
  Date  JJ-MM-AAAA                                             
 */
