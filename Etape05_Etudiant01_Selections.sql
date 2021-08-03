@@ -14,7 +14,7 @@ SELECT l.nom_local AS 'No.local', l.nb_bureau AS 'Nb.bureau', l.nb_prise_etherne
 FROM local AS l
 join peripherique AS p ON p.id_peripherique = l.imprimante_id_peripherique;
 
-SELECT l.nom_logiciel, count(l.id_logiciel)
+SELECT l.nom_logiciel AS 'logiciel', count(l.id_logiciel) AS "Nb. d'installation sur poste"
 FROM poste_has_logiciel AS p
 join logiciel AS l ON l.id_logiciel = p.id_logiciel
 group by id_logiciel
