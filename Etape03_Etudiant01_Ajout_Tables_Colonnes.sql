@@ -11,8 +11,10 @@ USE PosteClientDFC;
 -- Étape 3 : Ajout de tables et de colonnes           --
 -- -----------------------------------------------------
 CREATE TABLE type_peripherique(
-    id_type_peripherique INT NOT NULL PRIMARY KEY,
-    nom_type_peripherique VARCHAR(25)
+    id_type_peripherique INT NOT NULL,
+    nom_type_peripherique VARCHAR(25),
+     -- contraintes de table
+    PRIMARY KEY (id_local)
     )ENGINE = InnoDB;
     
 ALTER TABLE peripherique
