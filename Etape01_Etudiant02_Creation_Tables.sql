@@ -1,6 +1,6 @@
 /* 
  Travail pratique 1
- Nom de la première personne
+  Maxime Dubois
  --> Mohamed Reda Bouabdallah
  
  Date  02-08-2021                                             
